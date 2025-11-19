@@ -18,7 +18,7 @@ public class ClintSysApplication {
          
      System.out.println("hellow world the client is works");
       try{
-	 Socket socket=new Socket("localhost", 5000);	
+	 Socket socket=new Socket("localhost", 0);	
 
 	 BufferedReader consolReader=new BufferedReader(new InputStreamReader(System.in));
 	 BufferedReader in=new BufferedReader(new InputStreamReader(socket.getInputStream()));
