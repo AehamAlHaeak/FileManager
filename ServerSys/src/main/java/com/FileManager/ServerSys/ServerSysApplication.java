@@ -8,12 +8,13 @@ import java.util.HashSet;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import java.util.*;
+
 import com.FileManager.ServerSys.models.ClientHandler;
 
 @SpringBootApplication
 public class ServerSysApplication {
 	private static final int PORT = 5000;
-	private static Set<ClientHandler> clients =Collections.synchronizedSet(new HashSet<>());
+	public static Set<ClientHandler> clients =Collections.synchronizedSet(new HashSet<>());
 	public static void main(String[] args) {
 		SpringApplication.run(ServerSysApplication.class, args);
 		ServerSocket servSoc;
@@ -22,6 +23,7 @@ public class ServerSysApplication {
 
 		while(true){
 			Socket clientsock=servSoc.accept();
+			
 			ClientHandler client=new ClientHandler(clientsock);
 			clients.add(client);
 			client.start();
