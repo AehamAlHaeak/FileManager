@@ -36,41 +36,12 @@ public class ClintSysApplication {
 	    String name=inSc.next();
 		out.println(name);
 		
-     boolean runMessenger=true;
-	 while (runMessenger) {
-		System.out.println("enter choice \n B->BroadCast \n U->unicast");
-		String ch=inSc.next();
-		switch (ch) {
-			case "B":
 			    String msg;
 				out.println("");
 				while (!(msg = consolReader.readLine()).equalsIgnoreCase("exit")) {
 					out.println(msg);
 					}
 				
-				
-					
-			
-		
-				break;
-		   case "U" :
-              
-            
-
-		   break;
-			default:
-				break;
-		}
-		
-
-
-
-	 }
-
-
-
-
-
 		socket.close();
 	  }
 	  catch(Exception e){
